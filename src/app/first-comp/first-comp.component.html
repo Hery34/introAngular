@@ -1,0 +1,14 @@
+<h1>{{product.title }}</h1>
+<div class="bloc1">
+    <img src="{{product.imageURL}}" alt="">
+    <div id="bloc2">
+        <p class="sousTitre">{{ product.description}}</p>
+        <p><span class="libelle">Id :</span> {{ product.id}}</p>
+        <p><span class="libelle">Ont aimé ce produit :</span> {{ product.count}}</p>
+        <!-- Pour conditionner l'apparition de la catégorie à son rensignement, attention il faut vérifier l'imoprtation du module dans l'app de ce component-->
+        <p *ngIf="product.categorie"><span class="libelle">Catégorie :</span> {{ product.categorie}}</p>
+        <p *ngIf="product.texte"> <span class="libelle">Description : </span>{{product.texte}}</p>
+        <img class="icone" src="{{ product.icone1}}" alt="" id="jaime" (click)="jaime()">
+        <img class="icone" src="{{ product.icone2}}" alt="" id="jaimepas" (click)="jaimePas()">
+    </div>
+</div>
